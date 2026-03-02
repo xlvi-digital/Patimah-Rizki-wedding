@@ -387,7 +387,8 @@ body {
   margin: 0;
   font-family: var(--poppins);
   font-weight: 600;
-  color: var(--dark-100);
+    color: var(--light-main-color);
+
 
 }
 .about .row .content span {
@@ -396,7 +397,8 @@ body {
   margin-bottom: 1.5rem;
   font-family: var(--poppins);
   font-weight: normal;
-  color: var(--main-color);
+  color: var(--light-main-color);
+
 
 }
 .cba {
@@ -453,7 +455,7 @@ body {
   margin: 0;
   font-family: var(--poppins);
   font-weight: 600;
-  color: var(--dark-100);
+  color: var(--light-main-color);
 
 }
 .about2 .row .content span {
@@ -462,7 +464,7 @@ body {
   margin-bottom: 1.5rem;
   font-family: var(--poppins);
   font-weight: normal;
-  color: var(--main-color);
+  color: var(--light-main-color);
 
 }
 
@@ -653,7 +655,7 @@ body {
   font-size: 1.7rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: var(--main-color);
+  color: var(--dark-main-color);
   letter-spacing: 2px;
 }
 .event .card .box-date .date-event .jam .lokasi p {
@@ -785,7 +787,7 @@ body {
   font-size: 1.7rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: var(--main-color);
+  color: var(---dark-main-color);
   letter-spacing: 2px;
 }
 .event-2 .card .box-date .date-event-2 .jam .lokasi p {
@@ -995,7 +997,8 @@ body {
 .gift,
 .undang {
   padding: 7rem 7%;
-  background-image: linear-gradient(to top, rgba(93, 100, 111, 0.5), rgba(255, 255, 255, 1));
+  background-image: linear-gradient(to top, rgb(240, 239, 239), rgba(245, 173, 173, 0.5));
+
 }
 
 .gift h2,
@@ -1179,7 +1182,8 @@ body {
 /* RSVP */
 .rsvp {
   padding: 7rem 7% 5rem;
-  background-color: var(--bg);
+    background-image: linear-gradient(to top, rgb(240, 239, 239), rgba(245, 173, 173, 0.5));
+
   position: relative;
 }
 
