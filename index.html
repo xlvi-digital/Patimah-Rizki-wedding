@@ -131,7 +131,7 @@
         </div>
         <div class="content">
           <h3 data-aos="fade-up">Siti Patimah</h3>
-          <p data-aos="fade-up" data-aos-delay="300">Putri Pertama Dari :</p>
+          <p data-aos="fade-up" data-aos-delay="300">Putri Ke 3 Dari :</p>
           <span data-aos="fade-up" data-aos-delay="300">Bapak Ilyas & Ibu Nonok Dohit</span>
           <a href=" https://instagram.com/mellanii.04?igshid=OGQ5ZDc2ODk2ZA==" data-aos="fade-up" data-aos-duration="2000" target="_blank" class="cba"><i data-feather="instagram" style="vertical-align: middle"></i> INSTAGRAM</a>
         </div>
@@ -384,13 +384,9 @@ Setelah saling mengenal lebih dalam, kami memutuskan melangkah ke jenjang yang l
 
         <img src="images/rsvp.jpg" alt="" class="rsvp-img">
         <div class="message" data-aos="fade-down">
-          <form   method="POST" 
-          action="https://script.google.com/macros/s/AKfycbzhjvvKSWOQUlWq2xADPF1PCiAVk9Gl2o1S5ufDayUATd3If5dAw_-yXFKhyYBOh-2w/exec" id="my-form" >
+          <form  id="commentForm" name="commentForm">
             <div class="input-group">
-              <input type="text" name="Nama" id="nama" placeholder="Nama">
-            </div>
-            <div class="input-group">
-              <input type="number" name="Jumlah" id="Jumlah" placeholder="Jumlah yang akan Hadir" min="1" max="5" length="1">
+              <input type="text" name="name" id="nama" placeholder="Nama">
             </div>
             <div class="input-group">
              <select name="Kehadiran" id="kehadiran">
@@ -400,16 +396,12 @@ Setelah saling mengenal lebih dalam, kami memutuskan melangkah ke jenjang yang l
              </select>
             </div>
             <div class="input-group">
-              <textarea  cols="30" rows="10" name= "Pesan" placeholder="Berikan Ucapan & Doa Terbaik Untuk kedua Mempelai"></textarea>
+              <textarea  cols="30" rows="10" name= "pesan" placeholder="Berikan Ucapan & Doa Terbaik Untuk kedua Mempelai"></textarea>
             </div>
-            <button type="submit" class="btn">Send  <i data-feather="arrow-right" data-aos="fade-up" style="vertical-align: middle"></i></button>
+            <button type="submit" class="btn kirim">Send  <i data-feather="arrow-right" data-aos="fade-up" style="vertical-align: middle"></i></button>
           </form>
           <div class="container-card" data-aos="fade-up">
-            <div class="card-message">
-             <h2 class="tilie">Reyhan</h2>
-             <h4>Saudara</h4>
-             <p>Happy Wedding</p>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -494,7 +486,91 @@ Setelah saling mengenal lebih dalam, kami memutuskan melangkah ke jenjang yang l
         });
       </script>
 
-      
+      <script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxDe_pI0c9-eNQmNj_9Pe6t5qGy5cLebzbSXRicwwBVZIvr-IsC-U_VxCpnDUZZtApv/exec';
+const form = document.forms['commentForm'];
+const btnKirim = document.querySelector('.kirim');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Disable tombol + tampilkan loading
+    btnKirim.disabled = true;
+    btnKirim.innerHTML = `
+        <span class="loading"></span> Mengirim...
+    `;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            form.reset();
+
+            // Toastr sukses
+            toastr.success('Ucapan kamu berhasil dikirim!', 'Berhasil');
+
+            btnKirim.disabled = false;
+            btnKirim.textContent = "Kirim";
+        })
+        .catch(error => {
+            toastr.error('Terjadi kesalahan, coba lagi nanti.', 'Gagal');
+
+            btnKirim.disabled = false;
+            btnKirim.textContent = "Kirim";
+        });
+});
+
+const getURL = "https://script.google.com/macros/s/AKfycbwAPGMujlXL-PPvnqrTg5KYlBZYk-km539Sdr2k66CN2qgEf8KcvTA8gQZxPoHgaCHz/exec"; // pakai url GET
+
+function loadComments() {
+  fetch(getURL)
+    .then(res => res.json())
+    .then(data => {
+      let html = "";
+
+      data.reverse().forEach(item => {
+        
+        html += `
+          
+          <div class="card-message">
+             <h2 class="tilie">${item.nama}</h2>
+             <p>${item.pesan}</p>
+             <span>${timeAgo(item.timestamp)}</span>
+            </div>
+        `;
+      });
+
+      document.getElementById("comments").innerHTML = html;
+    })
+    .catch(err => console.log(err));
+}
+
+loadComments();
+
+function timeAgo(date) {
+  const now = new Date();
+  const seconds = Math.floor((now - new Date(date)) / 1000);
+
+  const intervals = {
+    tahun: 31536000,
+    bulan: 2592000,
+    minggu: 604800,
+    hari: 86400,
+    jam: 3600,
+    menit: 60,
+    detik: 1
+  };
+
+  for (let key in intervals) {
+    const value = Math.floor(seconds / intervals[key]);
+    if (value > 0) {
+      return `${value} ${key} yang lalu`;
+    }
+  }
+  return "Baru saja";
+}
+
+
+</script>
+
 
      
   </body>
