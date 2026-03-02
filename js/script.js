@@ -161,11 +161,13 @@ function noYani() {
 }
 
 // Url Params
+
 // url Data
 const urlParams = new URLSearchParams(window.location.search);
-const nama = urlParams.get("n") || "Bapak/Ibu/Saundara/i,";
+const nama = urlParams.get("n") || "";
+// const pronoun = urlParams.get("p") || "Bapak/Ibu/Saundara/i,";
 
-const namaContainer = document.querySelector(".popup h4 span");
+const namaContainer = document.querySelector(".dear #tamu");
 namaContainer.innerText = `${nama}`.replace(/ , $/, ",");
 
 document.querySelector("#nama").value = nama;
