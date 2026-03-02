@@ -246,7 +246,7 @@ body {
 }
 
 .hero .content h1 span {
-  color: var(--warning);
+  color: var(--dark-main-color);
 }
 
 .hero .content button {
