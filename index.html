@@ -400,9 +400,10 @@ Setelah saling mengenal lebih dalam, kami memutuskan melangkah ke jenjang yang l
             </div>
             <button type="submit" class="btn kirim">Send  <i data-feather="arrow-right" data-aos="fade-up" style="vertical-align: middle"></i></button>
           </form>
-          <div class="container-card" id="comments" data-aos="fade-up">
-            
+          <div id="comments">
+
           </div>
+         
         </div>
       </div>
     </section>
@@ -529,12 +530,13 @@ function loadComments() {
       data.reverse().forEach(item => {
         
         html += `
-          
-          <div class="card-message">
-             <h2 class="tilie">${item.nama}</h2>
-             <h4>${item.pesan}</h4>
-             <p>${timeAgo(item.timestamp)}</p>
-            </div>
+          <div class="container-card" data-aos="fade-up"> 
+            <div class="card-message">
+              <h2 class="tilie">${item.nama}</h2>
+              <h4>${item.pesan}</h4>
+              <p>${timeAgo(item.timestamp)}</p>
+              </div>
+          </div>
         `;
       });
 
