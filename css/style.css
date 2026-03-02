@@ -117,7 +117,7 @@ body {
   letter-spacing: 1px;
 }
 .popup-content h1 span {
-  color: var(--warning);
+  color: var(--dark-main-color);
 }
 
 /* Gaya untuk tombol tutup */
@@ -1343,7 +1343,7 @@ body {
   font-family: analogue;
 }
 .doa .content h3 span {
-  color: var(--warning);
+  color: var(--dark-main-color);
 }
 
 .doa .content .family {
