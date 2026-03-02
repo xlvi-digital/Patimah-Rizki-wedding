@@ -320,7 +320,7 @@ body {
 /* about */
 .about {
   padding: 7rem 7% 1.4rem;
-  background-image: linear-gradient(to top, rgb(185, 185, 185), rgba(245, 173, 173, 0.5));
+  background-image: linear-gradient(to top, rgb(240, 239, 239), rgba(245, 173, 173, 0.5));
 }
 
 .hero-img {
@@ -371,7 +371,6 @@ body {
 .about .row .content {
   flex: 1 1 35rem;
   padding: 10rem 2rem;
-  color: var(--main-color);
 }
 .about .row .content h3 {
   font-size: 4rem;
@@ -380,12 +379,16 @@ body {
   font-weight: normal;
   /* text-transform: uppercase; */
   letter-spacing: 1px;
+  color: var(--dark-main-color);
+
 }
 .about .row .content p {
   font-size: 2rem;
   margin: 0;
   font-family: var(--poppins);
   font-weight: 600;
+  color: var(--dark-100);
+
 }
 .about .row .content span {
   font-size: 1.5rem;
@@ -393,6 +396,8 @@ body {
   margin-bottom: 1.5rem;
   font-family: var(--poppins);
   font-weight: normal;
+  color: var(--dark-75);
+
 }
 .cba {
   display: inline-block;
@@ -409,7 +414,7 @@ body {
 /* about2 */
 .about2 {
   padding: 7rem 7% 1.4rem;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(93, 100, 111, 0.5));
+  background-image: linear-gradient(to top, rgb(240, 239, 239), rgba(245, 173, 173, 0.5));
 }
 
 .about2 .row {
@@ -504,7 +509,7 @@ body {
 
 .event h2 {
   font-size: 6rem;
-  color: var(--warning);
+  color: var(--dark-main-color);
   font-family: var(--explora);
   font-weight: 600;
   /* text-align: center; */
