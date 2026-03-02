@@ -1274,7 +1274,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url(../images/bg-popup.jpg);
+  background-image: url(../images/bg-popup.png);
   background-size: cover;
   background-position: 50% 20%;
   position: relative;
