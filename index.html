@@ -400,7 +400,7 @@ Setelah saling mengenal lebih dalam, kami memutuskan melangkah ke jenjang yang l
             </div>
             <button type="submit" class="btn kirim">Send  <i data-feather="arrow-right" data-aos="fade-up" style="vertical-align: middle"></i></button>
           </form>
-          <div class="container-card" data-aos="fade-up">
+          <div class="container-card" id="comments" data-aos="fade-up">
             
           </div>
         </div>
@@ -538,7 +538,7 @@ function loadComments() {
         `;
       });
 
-      document.getElementById("container-card").innerHTML = html;
+      document.getElementById("comments").innerHTML = html;
     })
     .catch(err => console.log(err));
 }
