@@ -30,12 +30,12 @@
   --gray-50: #afafaf;
   --gray-25: #e1e1e1;
 
-  --dark-main-color: #0a3428;
-  --main-color: #0f644f;
-  --light-main-color: #9bbca9;
+  --dark-main-color: #E8A0BF;
+  --main-color: #F7D6E0;
+  --light-main-color: #C97C9B;
 
-  --bg: #fefefe;
-  --warning: #c19f5f;
+  --bg: #FDF8F5;
+  --warning: #8B4A62;
 }
 
 * {
