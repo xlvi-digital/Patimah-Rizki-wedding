@@ -1375,7 +1375,8 @@ footer {
   padding: 1.7rem 0;
   text-align: center;
   /* margin-top: 5rem; */
-  background-color: #fff;
+    background-image: linear-gradient(to top, rgb(240, 239, 239), rgba(245, 173, 173, 0.5));
+
 }
 
 footer .logo {
