@@ -6,6 +6,7 @@ var popup = document.getElementById("myPopup");
 var closeBtn = document.getElementsByClassName("close")[0];
 var isAudioPlaying = true;
 var logo = document.getElementById("logo");
+const icon = document.querySelector(".logo i");
 var popupAudio = document.getElementById("popupAudio");
 
 popupAudio.addEventListener("loadedmetadata", function () {
@@ -41,12 +42,13 @@ function pause() {
   var popupAudio = document.getElementById("popupAudio");
   if (isAudioPlaying) {
     popupAudio.pause();
-    logo.classList.replace("bx-album", "bx-pause-circle");// Menghentikan lagu jika sedang diputar
+    icon.classList.replace("bx-pause-circle", "bx-album");
+    // Menghentikan lagu jika sedang diputar
     isAudioPlaying = false;
   } else {
     popupAudio.play();
     // Memulai kembali lagu jika tidak sedang diputar
-    logo.classList.replace("bx-pause-circle", "bx-album");
+    icon.classList.replace("bx-album", "bx-pause-circle");
     isAudioPlaying = true;
   }
 }
