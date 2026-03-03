@@ -6,6 +6,11 @@ var popup = document.getElementById("myPopup");
 var closeBtn = document.getElementsByClassName("close")[0];
 var isAudioPlaying = true;
 var logo = document.getElementById("logo");
+var popupAudio = document.getElementById("popupAudio");
+
+popupAudio.addEventListener("loadedmetadata", function () {
+  popupAudio.currentTime = 57;
+});
 
 // Fungsi untuk menampilkan popup
 function showPopup() {
@@ -20,6 +25,7 @@ function showPopup() {
 // Fungsi untuk menyembunyikan popup
 function hidePopup() {
   var popupAudio = document.getElementById("popupAudio");
+  popupAudio.currentTime = 57; // Mulai dari detik 57
   popupAudio.play(); // Menghentikan audio
   popup.style.transform = "translateY(-100%)";
   document.body.style.overflow = "auto";
