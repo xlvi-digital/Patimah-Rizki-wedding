@@ -40,10 +40,13 @@ function hidePopup() {
 function pause() {
   var popupAudio = document.getElementById("popupAudio");
   if (isAudioPlaying) {
-    popupAudio.pause(); // Menghentikan lagu jika sedang diputar
+    popupAudio.pause();
+    icon.classList.replace("bx-album", "bx-pause-circle");// Menghentikan lagu jika sedang diputar
     isAudioPlaying = false;
   } else {
-    popupAudio.play(); // Memulai kembali lagu jika tidak sedang diputar
+    popupAudio.play();
+    // Memulai kembali lagu jika tidak sedang diputar
+    icon.classList.replace("bx-pause-circle", "bx-album");
     isAudioPlaying = true;
   }
 }
